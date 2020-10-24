@@ -8,17 +8,25 @@
   }, 
   "params": [
     {
-      "name": "gpi_rank_select", "value": 0,
+      "name": "gpi_rank_select", "value": 157,
       "bind": {
-      "input": "range", "min": 0,
-      "max": 157,
+      "input": "range", "max": 157, "min": 1,
+      "step": -1,
+      "name": "GPI Rank Max: " }
+    },
+    {
+      "name": "gpi_rank_select_2", "value": 1,
+      "bind": {
+      "input": "range", "max": 157, "min": 1,
       "step": 1,
-      "name": "GPI Rank: " }
+      "name": "GPI Rank Min: " }
     }],
   "transform": [
     {"filter": "datum.gdp_pc > 0"}, 
     {"filter": "datum.gpi_rank > 0"}, 
-    {"filter": "datum.gpi_rank > gpi_rank_select"}
+    {"filter": "datum.gpi_rank < gpi_rank_select"},
+    {"filter": "datum.gpi_rank > gpi_rank_select_2"},
+    {"filter": "gpi_rank_select > gpi_rank_select_2"}
     ],
   
   "mark": "circle", 
