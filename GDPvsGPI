@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json", 
+  "width": 500,
+  "height": 400,
+  "title": "World GDP vs GPI",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Lam-Lin/FIT3179/main/relig_iso.csv"
+  }, 
+  "transform": [
+    {"filter": "datum.gdp_pc > 0"}, 
+    {"filter": "datum.gpi_rank > 0"} 
+    ],
+  
+  "mark": "circle", 
+  "encoding": {
+    "x": {
+      "field": "gdp_pc",
+      "type": "quantitative",
+      "title": "GDP per persent",
+      "axis": {"tickCount": 7},
+      "scale": {"type": "linear", "domain": [100, 70000]}
+    }, 
+    "y": {
+      "field": "gpi_score",
+      "type": "quantitative",
+      "title": "GPI Score",
+      "axis": {"tickCount": 6},
+      "scale": {"type": "linear", "domain": [1, 4]}
+        }, 
+    "opacity": {
+          "value": 0.8 
+    },
+    "size": {
+        "field": "percentage_non_religious", 
+        "type": "quantitative", 
+        "title": "No religous percentage",
+        "scale": {
+          "type": "threshold",
+          "domain": [0, 10, 30, 50, 100], 
+          "range": [10, 50, 150, 200, 300, 400]
+        },
+        "legend": {"format": ".2f"}
+    }, 
+
+  "tooltip": [
+        {"field": "country", "type": "nominal"},
+        {"field": "gdp_pc", "type": "quantitative", "title": "GDP","format": ","}, 
+        {"field": "gpi_score", "type": "quantitative", "title": "GPI","format": ","}, 
+        {"field": "percentage_non_religious","title": "No religious %", "type": "quantitative", "format": ","}
+      ]
+  }
+}
