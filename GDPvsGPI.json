@@ -6,9 +6,19 @@
   "data": {
     "url": "https://raw.githubusercontent.com/Lam-Lin/FIT3179/main/relig_iso.csv"
   }, 
+  "params": [
+    {
+      "name": "gpi_rank_select", "value": 0,
+      "bind": {
+      "input": "range", "min": 0,
+      "max": 157,
+      "step": 1,
+      "name": "GPI Rank: " }
+    }],
   "transform": [
     {"filter": "datum.gdp_pc > 0"}, 
-    {"filter": "datum.gpi_rank > 0"} 
+    {"filter": "datum.gpi_rank > 0"}, 
+    {"filter": "datum.gpi_rank > gpi_rank_select"}
     ],
   
   "mark": "circle", 
