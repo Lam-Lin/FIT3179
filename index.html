@@ -7,15 +7,21 @@
 </head>
 <body>
 
-<div id="vis"></div>
+<h1>An Example of Multiple Visualisations</h1>
+
+<h2>This is the first visualisation</h2>
+<div id="graph1"></div>
+
+<h2>This is the second visualisation</h2>
+<div id="graph2"></div>
 
 <script type="text/javascript">
   var graph1 = "https://Lam-Lin.github.io/FIT3179/Mapcode.json";
-  vegaEmbed('#vis', graph1).then(function(result) {
+  vegaEmbed('#graph1', graph1).then(function(result) {
   }).catch(console.error);
   
   var graph2 = "https://Lam-Lin.github.io/FIT3179/GDPvsGPI.json";
-  vegaEmbed('#vis', graph2).then(function(result) {
+  vegaEmbed('#graph2', graph2).then(function(result) {
   }).catch(console.error);
 </script>
 
