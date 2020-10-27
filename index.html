@@ -11,17 +11,24 @@
 
 <h2>GDP in World </h2>
 <div id="graph1"></div>
-
-<h2>GDP vs GPI vs Religous percentage in World</h2>
+  
+<h3>Life Ladder in World </h3>
 <div id="graph2"></div>
+
+<h4>GDP vs GPI vs Religous percentage in World</h4>
+<div id="graph3"></div>
 
 <script type="text/javascript">
   var graph1 = "https://Lam-Lin.github.io/FIT3179/Mapcode.json";
   vegaEmbed('#graph1', graph1).then(function(result) {
   }).catch(console.error);
   
-  var graph2 = "https://Lam-Lin.github.io/FIT3179/GDPvsGPI.json";
+  var graph2 = "https://Lam-Lin.github.io/FIT3179/Life.json";
   vegaEmbed('#graph2', graph2).then(function(result) {
+  }).catch(console.error);
+  
+  var graph3 = "https://Lam-Lin.github.io/FIT3179/GDPvsGPI.json";
+  vegaEmbed('#graph3', graph3).then(function(result) {
   }).catch(console.error);
 </script>
 
