@@ -1,0 +1,47 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json", 
+  "width": 400,
+  "height": 300,
+  "title": "Life ladder in Region",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Lam-Lin/FIT3179/main/Original.csv"
+  }, 
+
+  "transform": [
+    {"filter": "datum.Life_ladder > 0"}, 
+    {"filter": "datum.Log_of_GDP_per_person > 0"} 
+    ],
+  
+  "mark": "bar", 
+  "encoding": {
+    "x": {
+      "field": "Region_indicator",
+      "type": "nominal",
+      "title": "Region_indicator"
+    }, 
+    "y": {
+      "field": "Life_ladder",
+      "aggregate": "mean",
+      "type": "quantitative",
+      "title": "Life_ladder"
+        }, 
+    "opacity": {
+          "value": 0.8 
+    },
+    "color": {
+        "field": "Region_indicator", 
+        "type": "nominal", 
+        "scale": {
+          "type": "threshold"
+
+        }
+      },
+
+
+
+  "tooltip": [
+        {"field": "Region_indicator", "type": "nominal"},
+        {"field": "Life_ladder", "type": "quantitative", "title": "Life_ladder","format": ","}
+      ]
+  }
+}
