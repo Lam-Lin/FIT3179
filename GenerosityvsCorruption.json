@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json", 
+  "width": 600,
+  "height": 400,
+  "title": "Generosity vs Corruption",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Lam-Lin/FIT3179/main/Original.csv"
+  }, 
+
+  "params": [
+    {
+      "name": "Continent_selection", 
+      "bind": {
+      "input": "select", 
+      "options": [null, "Central and Eastern Europe", "Commonwealth of Independent States", "East Asia", "Latin America and Caribbean", "Middle East and North Africa", "North America and ANZ","South Asia","Southeast Asia","Sub-Saharan Africa","Western Europe"], 
+      "labels":["Show All",  "Central and Eastern Europe", "Commonwealth of Independent States", "East Asia", "Latin America and Caribbean", "Middle East and North Africa", "North America and ANZ","South Asia","Southeast Asia","Sub-Saharan Africa","Western Europe"],
+    "name": "Continent Selection: " }
+} ],
+
+  "transform": [
+    {"filter": "datum.Life_ladder > 0"}, 
+    {"filter": "datum.Generosity > 0"},
+    {"filter": "datum.Perceptions_of_corruption > 0"},
+    {"filter": "Continent_selection == null || datum.Region_indicator == Continent_selection"} 
+    ],
+  
+  "mark": "circle", 
+  "encoding": {
+    "x": {
+      "field": "Perceptions_of_corruption",
+      "type": "quantitative",
+      "title": "Perceptions_of_corruption",
+      "axis": {"tickCount": 7},
+      "scale": {"type": "linear", "domain": [0,1]}
+    }, 
+    "y": {
+      "field": "Generosity",
+      "type": "quantitative",
+      "title": "Generosity",
+      "axis": {"tickCount": 6},
+      "scale": {"type": "linear","domain": [0,1]}
+        }, 
+    "opacity": {
+          "value": 0.8 
+    },
+    "color": {
+        "field": "Region_indicator", 
+        "type": "nominal", 
+        "scale": {
+          "type": "threshold"
+
+        }
+      },
+    "size": {
+        "field": "Life_ladder", 
+        "type": "quantitative", 
+        "title": "Life_ladder",
+        "scale": {
+          "type": "threshold",
+          "domain": [1, 2, 3, 4, 5, 6, 7, 8], 
+          "range": [5, 20, 60, 100, 200, 300, 500, 800]
+        },
+        "legend": {"format": ".2f"}
+    }, 
+
+
+  "tooltip": [
+        {"field": "country", "type": "nominal"},
+        {"field": "Life_ladder", "type": "quantitative", "title": "Life_ladder","format": ","}, 
+        {"field": "Log_of_GDP_per_person", "type": "quantitative", "title": "Log_of_GDP_per_person","format": ","}, 
+        {"field": "Region_indicator","title": "Region_indicator", "type": "nominal"},
+        {"field": "Healthy_life_expectancy","title": "Healthy_life_expectancy", "type": "quantitative", "format": ","}
+      ]
+  }
+}
