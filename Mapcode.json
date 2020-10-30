@@ -21,7 +21,7 @@
             },
             "key": "country",
             "fields": ["gdp_pc"]
-            "title":"GDP per capita"
+            "title": "GDP per capita"
           }
         }
       ],
