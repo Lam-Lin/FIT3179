@@ -14,7 +14,7 @@
       "input": "select", 
       "options": [null, "Central and Eastern Europe", "Commonwealth of Independent States", "East Asia", "Latin America and Caribbean", "Middle East and North Africa", "North America and ANZ","South Asia","Southeast Asia","Sub-Saharan Africa","Western Europe"], 
       "labels":["Show All",  "Central and Eastern Europe", "Commonwealth of Independent States", "East Asia", "Latin America and Caribbean", "Middle East and North Africa", "North America and ANZ","South Asia","Southeast Asia","Sub-Saharan Africa","Western Europe"],
-    "name": "Region Selection: " }
+    "name": "Region: " }
 } ],
 
   "transform": [
