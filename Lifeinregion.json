@@ -17,13 +17,13 @@
     "x": {
       "field": "Region_indicator",
       "type": "nominal",
-      "title": "Region_indicator"
+      "title": ""
     }, 
     "y": {
       "field": "Life_ladder",
       "aggregate": "mean",
       "type": "quantitative",
-      "title": "Life_ladder"
+      "title": "Life ladder"
         }, 
     "opacity": {
           "value": 0.8 
@@ -34,7 +34,8 @@
         "scale": {
           "type": "threshold"
 
-        }
+        },
+        "title": "Region indicator"
       },
 
 
