@@ -20,7 +20,7 @@
               "url": "https://raw.githubusercontent.com/Lam-Lin/FIT3179/main/relig_iso.csv"
             },
             "key": "country",
-            "fields": ["gdp_pc"]
+            "fields": ["gdp_pc"],
             "title": "GDP per capita"
           }
         }
