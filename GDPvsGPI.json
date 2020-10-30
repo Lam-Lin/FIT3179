@@ -51,7 +51,7 @@
     "size": {
         "field": "percentage_non_religious", 
         "type": "quantitative", 
-        "title": "No religous percentage",
+        "title": "Religous percentage",
         "scale": {
           "type": "threshold",
           "domain": [0, 10, 30, 50, 100], 
