@@ -29,7 +29,7 @@
     "x": {
       "field": "Perceptions_of_corruption",
       "type": "quantitative",
-      "title": "Perceptions_of_corruption",
+      "title": "Perceptions of corruption",
       "axis": {"tickCount": 7},
       "scale": {"type": "linear", "domain": [0,1]}
     }, 
@@ -54,7 +54,7 @@
     "size": {
         "field": "Life_ladder", 
         "type": "quantitative", 
-        "title": "Life_ladder",
+        "title": "Life ladder",
         "scale": {
           "type": "threshold",
           "domain": [1, 2, 3, 4, 5, 6, 7, 8], 
@@ -66,10 +66,10 @@
 
   "tooltip": [
         {"field": "country", "type": "nominal"},
-        {"field": "Life_ladder", "type": "quantitative", "title": "Life_ladder","format": ","}, 
-        {"field": "Log_of_GDP_per_person", "type": "quantitative", "title": "Log_of_GDP_per_person","format": ","}, 
-        {"field": "Region_indicator","title": "Region_indicator", "type": "nominal"},
-        {"field": "Healthy_life_expectancy","title": "Healthy_life_expectancy", "type": "quantitative", "format": ","}
+        {"field": "Life_ladder", "type": "quantitative", "title": "Life ladder","format": ","}, 
+        {"field": "Log_of_GDP_per_person", "type": "quantitative", "title": "Log of GDP per person","format": ","}, 
+        {"field": "Region_indicator","title": "Region indicator", "type": "nominal"},
+        {"field": "Healthy_life_expectancy","title": "Healthy life expectancy", "type": "quantitative", "format": ","}
       ]
   }
 }
