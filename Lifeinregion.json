@@ -41,8 +41,8 @@
 
 
   "tooltip": [
-        {"field": "Region_indicator", "type": "nominal"},
-        {"field": "Life_ladder", "type": "quantitative", "title": "Life_ladder","format": ","}
+        {"field": "Region_indicator", "type": "nominal","title":"Region indicator","format": ","},
+        {"field": "Life_ladder", "type": "quantitative", "title": "Life ladder","format": ","}
       ]
   }
 }
